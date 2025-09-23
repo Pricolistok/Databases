@@ -14,3 +14,5 @@ psql -U prico
 3. запсук файлов
 docker exec -i lab_01 psql -U prico -d lab_01 -f /all.sql
 
+DELETE FROM Clients WHERE id = 9;
+
