@@ -1,0 +1,31 @@
+СЕМИНАР 5
+
+
+SELECT A.*, B.*
+from A inner join B on A.id = B.id
+
+A 
+id name
+1   a
+2	b
+2	c
+null d 
+4	e
+5	d
+
+
+B 
+id name
+1   a
+1	b
+2	c
+3   d 
+5	e
+null    f
+null	g
+
+
+Найти группу с МАКСИМАЛЬНЫМ количеством детаелй 
+
+1. GROUP BY color;
+2. 

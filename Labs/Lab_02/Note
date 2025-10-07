@@ -1,0 +1,18 @@
+1 . Запуск контейнера: docker run --name lab_01 -e POSTGRES_USER=prico -e POSTGRES_PASSWORD=lab_01 -p 5432:5432 -d postgres:16
+
+2. копирование файлов 
+docker cp insert_data.sql lab_01:/all.sql
+
+3. вход в докер
+docker exec -it lab_01 bash
+
+4. вход в sql
+psql -U prico
+
+
+
+3. запсук файлов
+docker exec -i lab_01 psql -U prico -d lab_01 -f /all.sql
+
+DELETE FROM Clients WHERE id = 9;
+
