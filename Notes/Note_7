@@ -1,0 +1,1 @@
+selct * from row_number() over(partition dy id, date_trunc('day', dttm))
