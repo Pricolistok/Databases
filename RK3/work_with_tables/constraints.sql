@@ -1,0 +1,46 @@
+ALTER TABLE Records
+ADD CONSTRAINT fk_clients
+FOREIGN KEY (client_id)
+REFERENCES Clients(client_id)
+ON DELETE CASCADE;
+
+ALTER TABLE Records
+ADD CONSTRAINT fk_specialists
+FOREIGN KEY (specialist_id)
+REFERENCES Specialists(specialist_id)
+ON DELETE CASCADE;
+
+ALTER TABLE Records
+ADD CONSTRAINT fk_services
+FOREIGN KEY (services_id)
+REFERENCES Services(services_id)
+ON DELETE CASCADE;
+
+ALTER TABLE Services
+ADD CONSTRAINT check_price
+CHECK (price >= 0 AND price <= 1000000);
+
+ALTER TABLE Clients
+ADD CONSTRAINT unique_email_clients
+UNIQUE(email);
+
+ALTER TABLE Specialists
+ADD CONSTRAINT unique_email_specialists
+UNIQUE(email);
+
+
+ALTER TABLE Clients ALTER COLUMN first_name SET NOT NULL;
+ALTER TABLE Clients ALTER COLUMN last_name SET NOT NULL;
+ALTER TABLE Clients ALTER COLUMN email SET NOT NULL;
+
+ALTER TABLE Specialists ALTER COLUMN first_name SET NOT NULL;
+ALTER TABLE Specialists ALTER COLUMN last_name SET NOT NULL;
+ALTER TABLE Specialists ALTER COLUMN email SET NOT NULL;
+
+ALTER TABLE Services ALTER COLUMN title SET NOT NULL;
+ALTER TABLE Services ALTER COLUMN description SET NOT NULL;
+ALTER TABLE Services ALTER COLUMN price SET NOT NULL;
+
+ALTER TABLE Records ALTER COLUMN client_id SET NOT NULL;
+ALTER TABLE Records ALTER COLUMN specialist_id SET NOT NULL;
+ALTER TABLE Records ALTER COLUMN services_id SET NOT NULL;

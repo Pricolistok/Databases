@@ -1,0 +1,13 @@
+1 . Запуск контейнера: docker run --name RK2 -e POSTGRES_USER=prico -e POSTGRES_PASSWORD=1234 -p 5433:5432 -d postgres:16
+
+2. копирование файлов 
+docker cp ./work_with_tables RK2:/work_with_tables
+
+3. вход в докер
+docker exec -it RK3 bash
+
+4. вход в sql
+psql -U prico
+
+5. запсук файлов
+docker exec -i lab_01 psql -U prico -d RK2 -f /all.sql
